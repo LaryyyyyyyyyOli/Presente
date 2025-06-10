@@ -1,0 +1,224 @@
+body {
+    background-image: url(../img/fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+h1 {
+    background-color: rgba(0, 0, 0, 0.478);
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+button {
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.botao-vinil {
+    background-color: white;
+    color: black;
+}
+
+.botao-vinil:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.botao-nerd {
+    background-color: hsl(2, 44%, 24%);
+    color: white;
+}
+
+.botao-nerd:hover {
+    background-color: hsl(2, 44%, 24%);
+    color: white;
+}
+
+.botao-claquete {
+    background-color: hsl(0, 0%, 0%);
+    color: white;
+}
+
+.botao-claquete:hover {
+    background-color: hsl(0, 0%, 0%);
+    color: white;
+}
+
+.botao-meme {
+    background-color: hsl(0, 0%, 100%);
+    color: black;
+}
+
+.botao-meme:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: black;
+}
+
+.img-vinil {
+    width: 170px;
+    height: auto;
+    box-shadow: 0 0 5px white;
+    transition: transform 0.3s ease;
+}
+
+.img-vinil:hover {
+    transform: scale(1.1);
+}
+
+.img-nerd {
+    width: 140px;
+    height: 80px;
+    border-radius: 20%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    margin: 0 14px;
+    transition: transform 0.3s ease;
+}
+
+.img-nerd:hover {
+    transform: scale(1.1);
+}
+
+.img-claquete {
+    width: 130px;
+    height: 81px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    margin: 0 18px;
+    transition: transform 0.3s ease;
+}
+
+.img-claquete:hover {
+    transform: scale(1.1);
+}
+
+.img-meme {
+    width: 168px;
+    height: auto;
+    border-radius: 20%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.img-meme:hover {
+    transform: scale(1.1);
+}
+
+.linha-imagens {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pequeno {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.478);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .img-vinil {
+        width: 140px;
+    }
+
+    .img-nerd {
+        width: 120px;
+        height: auto;
+        margin: 0 10px;
+    }
+
+    .img-claquete {
+        width: 110px;
+        height: auto;
+        margin: 0 10px;
+    }
+
+    .img-meme {
+        width: 140px;
+    }
+
+    button {
+        font-size: 1.3rem;
+        padding: 0.4rem 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 0.3rem 10px;
+        margin: 0.3rem;
+    }
+
+    .img-vinil, .img-nerd, .img-claquete, .img-meme {
+        width: 100px !important;
+        height: auto !important;
+        margin: 0 5px !important;
+    }
+
+    .linha-imagens {
+        gap: 5px;
+    }
+
+    .pequeno {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.2rem 8px;
+    }
+
+    .img-vinil, .img-nerd, .img-claquete, .img-meme {
+        width: 80px !important;
+        margin: 0 3px !important;
+    }
+
+    .pequeno {
+        width: 35px;
+        height: 35px;
+    }
+}

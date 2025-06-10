@@ -1,0 +1,124 @@
+body {
+    background-image: url(../img/fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, h2, h3, p {
+    background-color: rgba(0, 0, 0, 0.478);
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1px 0;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Botões em coluna */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 1rem; /* Espaço entre os botões */
+    width: 100%;
+    max-width: 400px;
+}
+
+button {
+    margin: 0.5rem;
+    font-size: 1rem;
+    padding: 0.5rem 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.botaoA {
+    background-color: white;
+    color: rgb(5, 5, 5);
+}
+
+.botaoA:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.botaoB {
+    background-color: hsl(2, 44%, 24%);
+    color: white;
+}
+
+.botaoB:hover {
+    background-color: hsl(2, 44%, 24%);
+    color: white;
+}
+
+.botaoC {
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 98%);
+}
+
+.botaoC:hover {
+    background-color: hsl(0, 0%, 0%);
+    color: white;
+}
+
+.botaoD {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 0%);
+}
+
+.botaoD:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: black;
+}
+
+.botaoE {
+    background-color: hsl(2, 44%, 24%);
+    color: white;
+}
+
+.botaoE:hover {
+    background-color: hsl(2, 44%, 24%);
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        max-width: 100%;
+        height: auto;
+        gap: 0.8rem;
+    }
+    button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.7rem 0;
+    }
+    h1, h2, h3, p {
+        font-size: 0.9rem;
+        max-width: 100%;
+        margin: 5px 0;
+    }
+}

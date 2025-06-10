@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="memes.css">
+    <title>Quiz</title>
+</head>
+<body>
+
+        <div class="container">
+        <img src="..//img/Memes 5.jpg" alt="ampolas de raios catódicos" class="img">
+    </div>
+
+    <h1>Marcia Sensitiva é conhecida por ser um meme icônico graças a sua falta de paciência, ela recebe perguntas de seus ouvintes e as responde com toda a sinceridade do mundo. Uma de suas respostas mais famosas foi: "Você deseja namorar com o teu chefe que é casado, você acha que vai dar certo? Não, então esse desejo vai te levar á? .... E ai você vai abaixar seu padrão vibratório, vai ser aquela mulher triste, chata e os encostos vem. Então você não pode desejar aquilo que você não pode ter ....."</h1>
+
+    <h2>Complete os espaços que faltam</h2>
+
+
+    <div class="container">
+        <button id="BotaoA" class="BotaoA">A) "plim plim plim ilusão" e "acorda, mulher".</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoB" class="botaoB">B) "pá pá pá energia ruim" e "você tá fora da casinha".</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoC" class="botaoC">C) "puf puf puf obsessão" e "sai dessa, criatura".</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoD" class="botaoD">D) "piu piu piu loucura" e "para de ser doida".</button>
+    </div>
+                
+    <div class="container">
+        <button id="BotaoE" class="botaoE">E) "tum tum tum karma" e "desce dessa nuvem".</button>
+    </div>
+
+ <div id="mensagem" class="mensagem"></div>
+
+  <script>
+    function mostrarMensagem(texto, correto = false) {
+      const mensagem = document.getElementById("mensagem");
+      mensagem.innerText = texto;
+
+      if (correto) {
+        mensagem.style.color = "withe";
+        mensagem.style.backgroundColor = "black";
+        setTimeout(() => {
+          window.location.href = "Memes6.html";
+        }, 2000); // espera 2 segundos antes de redirecionar
+      } else {
+        mensagem.style.color = "white";
+        mensagem.style.backgroundColor = "black";
+      }
+    }
+
+    document.getElementById("BotaoC").addEventListener("click", function () {
+      mostrarMensagem("Poxan...");
+    });
+    document.getElementById("BotaoE").addEventListener("click", function () {
+      mostrarMensagem("Náo é essa não amo");
+    });
+    document.getElementById("BotaoA").addEventListener("click", function () {
+      mostrarMensagem("Pensa mais queen");
+    });
+    document.getElementById("BotaoB").addEventListener("click", function () {
+      mostrarMensagem("Nhe");
+    });
+    document.getElementById("BotaoD").addEventListener("click", function () {
+      mostrarMensagem("SLAY QUEEN, SLAY", true);
+    });
+  </script>
+
+</body>
+</html> 

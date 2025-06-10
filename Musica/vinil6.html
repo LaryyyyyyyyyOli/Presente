@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="vinil.css" />
+  <title>Quiz</title>
+</head>
+<body>
+
+  <h1>Descubra a música através da letra</h1>
+
+  <div class="container">
+    <img src="../img/the apparition, sleep token.png" alt="" class="img" />
+  </div>  
+
+  <h2>Tá ligada qual é?</h2>
+
+  <div class="container">
+    <input id="answerInput" type="text" placeholder="Responda com: artista - nome da musica" autocomplete="off" />
+    <button id="submitBtn">Enviar</button>
+    <style>
+      #answerInput {
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      #submitBtn {
+        padding: 10px 15px;
+        font-size: 16px;
+        background-color: hsl(2, 44%, 24%);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      #submitBtn:hover {
+        background-color: hsl(2, 44%, 24%);
+      }
+    </style>
+  </div>
+
+  <div class="message" id="message"></div>
+
+  <script>
+    (function() {
+      const correctAnswer = "Sleep Token - The apparition";
+
+      function normalizeText(text) {
+        return text
+          .toLowerCase()
+          .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove acentos
+          .replace(/\s+/g, " ") // substitui múltiplos espaços por um único
+          .trim();
+      }
+
+      function salvarProgresso() {
+        const progresso = JSON.parse(localStorage.getItem("quizzesCompletos") || "{}");
+        progresso.musica = true;
+        localStorage.setItem("quizzesCompletos", JSON.stringify(progresso));
+      }
+
+      const redirectURL = "..//HTML Base/menu.html";
+      const input = document.getElementById('answerInput');
+      const button = document.getElementById('submitBtn');
+      const message = document.getElementById('message');
+
+      button.addEventListener('click', function() {
+        const userAnswer = normalizeText(input.value);
+        if (!userAnswer) {
+          message.textContent = "Se não escrever não vai né.";
+          message.style.color = "white";
+          message.style.backgroundColor = "black";
+          return;
+        }
+
+        if (userAnswer === normalizeText(correctAnswer)) {
+          message.style.color = "white";
+          message.style.backgroundColor = "black";
+          message.textContent = "Arrasou queen!";
+          setTimeout(() => {
+            salvarProgresso(); // salva o progresso antes de voltar
+            window.location.href = redirectURL;
+          }, 1000);
+        } else {
+          message.style.color = "white";
+          message.style.backgroundColor = "black";
+          message.textContent = "Já foi melhor em diva 🤨.";
+        }
+      });
+
+      input.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          button.click();
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

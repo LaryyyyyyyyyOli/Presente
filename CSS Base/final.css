@@ -1,0 +1,145 @@
+body {
+  background-image: url(../img/fundo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: Arial, sans-serif;
+}
+
+/* Títulos */
+h1, h2 {
+  background-color: rgba(0, 0, 0, 0.478);
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+/* Container de botões */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+/* Estilo da imagem dentro do botão */
+.container .img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Botões de imagem */
+button {
+  width: 100%;
+  max-width: 180px;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+button img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+button img:hover {
+  transform: scale(1.05);
+}
+
+/* Linha de ícones pequenos */
+.linha-imagens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pequeno {
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.478);
+  object-fit: contain;
+}
+
+/* Media Query para tablets e celulares */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .container {
+    gap: 15px;
+  }
+
+  .container .img,
+  button img {
+    max-width: 140px;
+  }
+
+  .pequeno {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Media Query para celulares menores */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .container .img,
+  button img {
+    max-width: 120px;
+  }
+
+  .pequeno {
+    width: 35px;
+    height: 35px;
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Nerd.css">
+    <title>Quiz</title>
+</head>
+<body>
+
+    <h1>A Semana de Arte Moderna é considerada como um divisor de águas para a cultura brasileira porque:
+    </h1>
+
+
+    <div class="container">
+        <button id="BotaoA" class="botaoA">a) propôs a continuação da tradição e o apego à literatura clássica, mas, ao mesmo tempo, deixou-se influenciar pelos movimentos de vanguarda que eclodiam na Europa no início do século XX.</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoB" class="botaoB">b) antecipou as renovações artísticas que só se consolidariam a partir da década de 1950 com o Concretismo, corrente literária liderada pelos poetas Décio Pignatari e os irmãos Haroldo e Auguso de Campos.</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoC" class="botaoC">c) foi considerada como a primeira manifestação coletiva pública na história cultural de nosso país em favor de um espírito novo e moderno que contrariasse a arte tradicional de teor conservador que predominava no Brasil desde o século XIX.</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoD" class="botaoD">d) uniu técnicas literárias de maneira inédita na literatura, mesclando as influências oriundas das vanguardas europeias com o Naturalismo e o Simbolismo, estéticas em voga no século XIX. Essa simbiose temática proporcionou a criação de uma nova linguagem, que em muito lembrava aquela empregada no período Barroco de nossa literatura.</button>
+    </div>
+                
+<div id="mensagem" class="mensagem"></div>
+
+  <script>
+    function mostrarMensagem(texto, correto = false) {
+      const mensagem = document.getElementById("mensagem");
+      mensagem.innerText = texto;
+
+      if (correto) {
+        mensagem.style.color = "withe";
+        mensagem.style.backgroundColor = "black";
+        setTimeout(() => {
+          window.location.href = "nerd3.html";
+        }, 2000); // espera 2 segundos antes de redirecionar
+      } else {
+        mensagem.style.color = "white";
+        mensagem.style.backgroundColor = "black";
+      }
+    }
+
+    document.getElementById("BotaoA").addEventListener("click", function () {
+      mostrarMensagem("EROUUUUUUU!");
+    });
+    document.getElementById("BotaoB").addEventListener("click", function () {
+      mostrarMensagem("Nah, tenta denovo!");
+    });
+    document.getElementById("BotaoD").addEventListener("click", function () {
+      mostrarMensagem("Poxa diva, tenta de novo!");
+    });
+    document.getElementById("BotaoC").addEventListener("click", function () {
+      mostrarMensagem("YEY 🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳.", true);
+    });
+  </script>
+</body>
+</html>  

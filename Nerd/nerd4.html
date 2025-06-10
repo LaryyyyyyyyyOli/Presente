@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Nerd.css">
+    <title>Quiz</title>
+</head>
+<body>
+
+    <h1>(FAESA) A patologia oftalmológica denominada miopia, e a prática do uso da mão esquerda para escrever, são condicionados por genes recessivos.
+  Após a análise da genealogia a seguir, responda:
+ </h1>
+
+    <div class="container">
+        <img src="..//img/Genética.png" alt="ampolas de raios catódicos" class="img">
+    </div>
+
+    <h2>Qual é a probabilidade do casal 4 x 5 ter uma criança diíbrida?</h2>
+
+    <div class="container">
+        <button id="BotaoA" class="botaoA">A) 1/4</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoB" class="botaoB">B) 1/16</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoC" class="botaoC">C) 3/16 </button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoD" class="botaoD">D) 1/8</button>
+    </div>
+                
+<div id="mensagem" class="mensagem"></div>
+
+  <script>
+    function mostrarMensagem(texto, correto = false) {
+      const mensagem = document.getElementById("mensagem");
+      mensagem.innerText = texto;
+
+      if (correto) {
+        mensagem.style.color = "withe";
+        mensagem.style.backgroundColor = "black";
+        setTimeout(() => {
+          window.location.href = "nerd5.html";
+        }, 2000); // espera 2 segundos antes de redirecionar
+      } else {
+        mensagem.style.color = "white";
+        mensagem.style.backgroundColor = "black";
+      }
+    }
+
+    document.getElementById("BotaoD").addEventListener("click", function () {
+      mostrarMensagem("EROUUUUUUU!");
+    });
+    document.getElementById("BotaoB").addEventListener("click", function () {
+      mostrarMensagem("Nah, tenta denovo!");
+    });
+    document.getElementById("BotaoC").addEventListener("click", function () {
+      mostrarMensagem("Poxa diva, tenta de novo!");
+    });
+    document.getElementById("BotaoA").addEventListener("click", function () {
+      mostrarMensagem("YEY 🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳.", true);
+    });
+  </script>
+</body>
+</html>  

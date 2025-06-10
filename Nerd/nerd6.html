@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Nerd.css">
+    <title>Quiz</title>
+</head>
+<body>
+
+    <h1>(UFPA) “Os antigos gregos consideravam a memória uma entidade sobrenatural ou divina: era a deusa Mnemosyne, mãe das Musas, que protegem as artes e a história. A deusa Memória dava aos poetas e adivinhos o poder de voltar ao passado e de lembrá-los para a coletividade (...). Os historiadores antigos escreviam para que não fossem perdidos os feitos memoráveis dos humanos e para que servissem de exemplos às gerações futuras”</h1>
+
+    <h2>A memória, para os gregos, tinha como função:</h2>
+
+    <div class="container">
+        <button id="BotaoA" class="botaoA">A) Garantir a identidade cultural</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoB" class="botaoB">B) Auxiliar os artistas e historiadores a homenagearem os seus mortos.</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoC" class="botaoC">C) Possibilitar o reconhecimento de coisas, fatos, lugares.</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoD" class="botaoD">D) Relatar a história de todos os antepassados.</button>
+    </div>
+
+    <div id="mensagem" class="mensagem"></div>
+
+    <script>
+      function salvarProgresso() {
+        const progresso = JSON.parse(localStorage.getItem("quizzesCompletos") || "{}");
+        progresso.nerd = true;
+        localStorage.setItem("quizzesCompletos", JSON.stringify(progresso));
+      }
+
+      function mostrarMensagem(texto, correto = false) {
+        const mensagem = document.getElementById("mensagem");
+        mensagem.innerText = texto;
+
+        if (correto) {
+          mensagem.style.color = "white";
+          mensagem.style.backgroundColor = "black";
+          setTimeout(() => {
+            salvarProgresso();
+            window.location.href = "..//HTML Base/menu.html"; // redireciona após 2 segundos
+          }, 2000);
+        } else {
+          mensagem.style.color = "white";
+          mensagem.style.backgroundColor = "black";
+        }
+      }
+
+      document.getElementById("BotaoA").addEventListener("click", function () {
+        mostrarMensagem("EROUUUUUUU!");
+      });
+      document.getElementById("BotaoD").addEventListener("click", function () {
+        mostrarMensagem("Nah, tenta denovo!");
+      });
+      document.getElementById("BotaoC").addEventListener("click", function () {
+        mostrarMensagem("Poxa diva, tenta de novo!");
+      });
+      document.getElementById("BotaoB").addEventListener("click", function () {
+        mostrarMensagem("YEY 🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳.", true);
+      });
+    </script>
+</body>
+</html>

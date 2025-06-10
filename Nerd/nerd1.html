@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Nerd.css">
+    <title>Quiz</title>
+</head>
+<body>
+
+    <h1>(Enem Digital/2020) No final do século XIX, muitos cientistas estavam interessados nos intrigantes fenômenos observados nas ampolas de raios catódicos, que são tubos sob vácuo em que se ligam duas placas a uma fonte de alta tensão. Os raios catódicos passam através de um orifício no ânodo e continuam o percurso até a outra extremidade do tubo, onde são detectados pela fluorescência produzida ao chocarem-se com um revestimento especial, como pode ser observado na figura. Medições da razão entre a carga e a massa dos constituintes dos raios catódicos mostram que a sua identidade independe do material do cátodo ou do gás dentro das ampolas. </h1>
+
+    <div class="container">
+        <img src="..//img/Nerd1.jpg" alt="ampolas de raios catódicos" class="img">
+    </div>
+
+    <h2>Essa radiação invisível detectada nas ampolas é constituída por</h2>
+
+    <div class="container">
+        <button id="BotaoA" class="BotaoA">A) ânions.</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoB" class="botaoB">B) cátions.</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoC" class="botaoC">C) prótons.</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoD" class="botaoD">D) elétrons.</button>
+    </div>
+                
+    <div class="container">
+        <button id="BotaoE" class="botaoE">E) partículas alfa.</button>
+    </div>
+
+ <div id="mensagem" class="mensagem"></div>
+
+  <script>
+    function mostrarMensagem(texto, correto = false) {
+      const mensagem = document.getElementById("mensagem");
+      mensagem.innerText = texto;
+
+      if (correto) {
+        mensagem.style.color = "withe";
+        mensagem.style.backgroundColor = "black";
+        setTimeout(() => {
+          window.location.href = "nerd2.html";
+        }, 2000); // espera 2 segundos antes de redirecionar
+      } else {
+        mensagem.style.color = "white";
+        mensagem.style.backgroundColor = "black";
+      }
+    }
+
+    document.getElementById("BotaoA").addEventListener("click", function () {
+      mostrarMensagem("EROUUUUUUU!");
+    });
+    document.getElementById("BotaoB").addEventListener("click", function () {
+      mostrarMensagem("Nah, tenta denovo!");
+    });
+    document.getElementById("BotaoC").addEventListener("click", function () {
+      mostrarMensagem("Poxa diva, tenta de novo!");
+    });
+    document.getElementById("BotaoE").addEventListener("click", function () {
+      mostrarMensagem("Não é essa não!");
+    });
+    document.getElementById("BotaoD").addEventListener("click", function () {
+      mostrarMensagem("YEY 🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳.", true);
+    });
+  </script>
+
+</body>
+</html>  

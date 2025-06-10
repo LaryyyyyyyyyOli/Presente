@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Nerd.css">
+    <title>Quiz</title>
+</head>
+<body>
+
+    <h1>(F. de Direito de Franca) Uma das manifestações culturais mais interessantes e influentes das cidades antigas foi o teatro. Surgiu na cidade de Atenas, no século V a.C..</h1>
+
+    <h2>É correto afirmar, a partir do texto e de seus conhecimentos, que o teatro na Grécia antiga,</h2>
+
+    <div class="container">
+        <button id="BotaoA" class="botaoA">A) permitiu transpor as disputas políticos para o espaço ficcional, uma vez que as peças tratavam apenas de questões do presente.</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoB" class="botaoB">B) surgiu como forma de homenagear deuses e incorporou temas e preocupações presentes na mitologia.</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoC" class="botaoC">C) contribuía para integrar nobres e escravos, homens e mulheres, uma vez que todos participavam das encenações.</button>
+    </div>
+
+    <div class="container">
+        <button id="BotaoD" class="botaoD">D) demonstrava a valorização das atividades artísticas, uma vez que a dramatização era a principal disciplina na formação das crianças.</button>
+    </div>
+
+<div id="mensagem" class="mensagem"></div>
+
+  <script>
+    function mostrarMensagem(texto, correto = false) {
+      const mensagem = document.getElementById("mensagem");
+      mensagem.innerText = texto;
+
+      if (correto) {
+        mensagem.style.color = "withe";
+        mensagem.style.backgroundColor = "black";
+        setTimeout(() => {
+          window.location.href = "nerd4.html";
+        }, 2000); // espera 2 segundos antes de redirecionar
+      } else {
+        mensagem.style.color = "white";
+        mensagem.style.backgroundColor = "black";
+      }
+    }
+
+    document.getElementById("BotaoA").addEventListener("click", function () {
+      mostrarMensagem("EROUUUUUUU!");
+    });
+    document.getElementById("BotaoD").addEventListener("click", function () {
+      mostrarMensagem("Nah, tenta denovo!");
+    });
+    document.getElementById("BotaoC").addEventListener("click", function () {
+      mostrarMensagem("Poxa diva, tenta de novo!");
+    });
+
+    document.getElementById("BotaoB").addEventListener("click", function () {
+      mostrarMensagem("YEY 🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳.", true);
+    });
+  </script>
+</body>
+</html>  

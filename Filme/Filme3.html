@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="filmes.css" />
+  <title>Quiz</title>
+</head>
+<body>
+
+  <h1>Advinhe a Série</h1>
+
+  <div class="container">
+    <img src="..//img/filme 3/Arcane 1.jpg" alt="ampolas de raios catódicos" class="img" />
+  </div>
+
+  <div class="container">
+    <input type="text" id="resposta" placeholder="Eai qual o nome?" />
+    <button id="enviar">Enviar</button>
+  </div>
+
+  <div id="mensagem" class="mensagem"></div>
+
+  <script>
+    const imagemOriginal = "..//img/filme 3/Arcane 1.jpg";
+    const imagensErro = [
+      "..//img/filme 3/Arcane 2.jpg",
+      "..//img/filme 3/Arcane 3.jpg",
+      "..//img/filme 3/Arcane 4.jpg",
+      "..//img/filme 3/Arcane 5.jpg",
+      "..//img/filme 3/Arcane 6.jpg"
+    ];
+
+    let indiceErro = 0;
+
+    function normalizarTexto(texto) {
+      return texto
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, "")
+        .toLowerCase();
+    }
+
+    const respostaCorreta = normalizarTexto("Arcane");
+
+    function mostrarMensagem(texto, correto = false) {
+      const mensagem = document.getElementById("mensagem");
+      const imagem = document.querySelector(".img");
+      mensagem.innerText = texto;
+
+      if (correto) {
+        mensagem.style.color = "white";
+        mensagem.style.backgroundColor = "black";
+        setTimeout(() => {
+          window.location.href = "Filme4.html";
+        }, 2000);
+      } else {
+        mensagem.style.color = "white";
+        mensagem.style.backgroundColor = "black";
+
+        if (indiceErro < imagensErro.length) {
+          imagem.src = imagensErro[indiceErro];
+          indiceErro++;
+        } else {
+          imagem.src = imagemOriginal;
+          indiceErro = 0;
+        }
+      }
+    }
+
+    document.getElementById("enviar").addEventListener("click", function () {
+      const respostaUsuario = document.getElementById("resposta").value;
+      const respostaNormalizada = normalizarTexto(respostaUsuario);
+
+      if (respostaNormalizada === respostaCorreta) {
+        mostrarMensagem("AEEEEEE", true);
+      } else {
+        mostrarMensagem("Jura?");
+      }
+    });
+  </script>
+
+</body>
+</html>

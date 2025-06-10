@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="memes.css">
+  <title>Quiz</title>
+</head>
+<body>
+
+  <div class="container">
+    <img src="..//img/Memes 6.jpg" alt="ampolas de raios catódicos" class="img">
+  </div>
+
+  <h1>No famoso meme "Cê é o bixâo memo em doido" o suspeito de assaltar uma churrascaria fica espantado após ver que o repórter:</h1>
+
+  <div class="container">
+    <button id="BotaoA" class="BotaoA">A) Grava e corre.</button>
+  </div>
+
+  <div class="container">
+    <button id="BotaoB" class="botaoB">B) Filma e fala.</button>
+  </div>
+
+  <div class="container">
+    <button id="BotaoC" class="botaoC">C) Pergunta e aponta.</button>
+  </div>
+
+  <div class="container">
+    <button id="BotaoD" class="botaoD">D) Segura e denuncia.</button>
+  </div>
+
+  <div class="container">
+    <button id="BotaoE" class="botaoE">E) Grava e mostra.</button>
+  </div>
+
+  <div id="mensagem" class="mensagem"></div>
+
+  <script>
+    function salvarProgresso() {
+      const progresso = JSON.parse(localStorage.getItem("quizzesCompletos") || "{}");
+      progresso.meme = true;
+      localStorage.setItem("quizzesCompletos", JSON.stringify(progresso));
+    }
+
+    function mostrarMensagem(texto, correto = false) {
+      const mensagem = document.getElementById("mensagem");
+      mensagem.innerText = texto;
+
+      if (correto) {
+        mensagem.style.color = "white"; // corrigido de "withe"
+        mensagem.style.backgroundColor = "black";
+        setTimeout(() => {
+          salvarProgresso();
+          window.location.href = "..//HTML Base/menu.html";
+        }, 2000);
+      } else {
+        mensagem.style.color = "white";
+        mensagem.style.backgroundColor = "black";
+      }
+    }
+
+    document.getElementById("BotaoC").addEventListener("click", function () {
+      mostrarMensagem("Poxan...");
+    });
+    document.getElementById("BotaoE").addEventListener("click", function () {
+      mostrarMensagem("Náo é essa não amo");
+    });
+    document.getElementById("BotaoA").addEventListener("click", function () {
+      mostrarMensagem("Pensa mais queen");
+    });
+    document.getElementById("BotaoD").addEventListener("click", function () {
+      mostrarMensagem("Nhe");
+    });
+    document.getElementById("BotaoB").addEventListener("click", function () {
+      mostrarMensagem("SLAY QUEEN, SLAY", true);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../CSS Base/menu.css" />
+  <title>Quiz</title>
+</head>
+<body>
+  <h1>Choose...</h1>
+
+  <div class="container">
+    <button id="Botao1" class="botao-vinil">
+      <img src="../img/vinil.png" alt="vinil" class="img-vinil" />
+    </button>
+  </div>
+
+  <div class="container">
+    <button id="Botao2" class="botao-nerd">
+      <img src="../img/nerd.png" alt="nerd" class="img-nerd" />
+    </button>
+  </div>
+
+  <div class="container">
+    <button id="Botao3" class="botao-claquete">
+      <img src="../img/claquete.png" alt="claquete" class="img-claquete" />
+    </button>
+  </div>
+
+  <div class="container">
+    <button id="Botao4" class="botao-meme">
+      <img src="../img/meme.jpg" alt="meme" class="img-meme" />
+    </button>
+  </div>
+
+  <div class="linha-imagens">
+    <img src="../img/Cadeado.png" alt="cadeado" class="pequeno" />
+    <img src="../img/X.png" alt="X1" class="pequeno" />
+    <img src="../img/X.png" alt="X2" class="pequeno" />
+    <img src="../img/X.png" alt="X3" class="pequeno" />
+    <img src="../img/X.png" alt="X4" class="pequeno" />
+    <img src="../img/um.png" alt="X5" class="pequeno" style="display:none;" />
+    <img src="../img/dois.png" alt="X6" class="pequeno" style="display:none;" />
+    <img src="../img/tres.png" alt="X7" class="pequeno" style="display:none;" />
+    <img src="../img/quatro.png" alt="X8" class="pequeno" style="display:none;" />
+  </div>
+
+  <!-- Botão que aparece quando todos quizzes estão completos -->
+  <div class="container" id="finalContainer" style="display: none; margin-top: 20px;">
+    <button id="botaoFinal">Boaa meu anjoo</button>
+  </div>
+
+  <script>
+    function atualizarLinhaImagens() {
+      const completados = JSON.parse(localStorage.getItem('quizzesCompletos')) || {};
+      const imagens = document.querySelectorAll('.linha-imagens img');
+
+      if (completados.musica) {
+        trocarImagem(imagens, 'X1', '../img/um.png', 'X5');
+      }
+      if (completados.nerd) {
+        trocarImagem(imagens, 'X2', '../img/dois.png', 'X6');
+      }
+      if (completados.filme) {
+        trocarImagem(imagens, 'X3', '../img/tres.png', 'X7');
+      }
+      if (completados.meme) {
+        trocarImagem(imagens, 'X4', '../img/quatro.png', 'X8');
+      }
+
+      if (completados.musica && completados.nerd && completados.filme && completados.meme) {
+        document.getElementById('finalContainer').style.display = 'block';
+      }
+    }
+
+    function trocarImagem(imagens, altOriginal, novoSrc, novoAlt) {
+      imagens.forEach(img => {
+        if (img.alt === altOriginal) {
+          img.src = novoSrc;
+          img.alt = novoAlt;
+          img.style.display = 'inline';
+        }
+      });
+    }
+
+    window.onload = function () {
+      atualizarLinhaImagens();
+
+      document.getElementById('Botao1').onclick = () => {
+        window.location.href = '../Musica/vinil1.html';
+      };
+      document.getElementById('Botao2').onclick = () => {
+        window.location.href = '../Nerd/nerd1.html';
+      };
+      document.getElementById('Botao3').onclick = () => {
+        window.location.href = '../Filme/Filme1.html';
+      };
+      document.getElementById('Botao4').onclick = () => {
+        window.location.href = '../Memes/memes1.html';
+      };
+
+      document.getElementById('botaoFinal').onclick = () => {
+        localStorage.removeItem('quizzesCompletos'); // Reseta o progresso
+        window.location.href = '../HTML Base/final.html'; // Redireciona para a página final
+      };
+    };
+  </script>
+</body>
+</html>
