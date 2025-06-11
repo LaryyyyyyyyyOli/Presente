@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../CSS Base/index.css" />
+  <title>Quiz</title>
+</head>
+<body>
+  <h1>Feliz aniversário! Este é um presente para a Yas, mas como posso saber se você é realmente a Yas e não apenas um curioso...</h1>
+
+  <div class="container">
+    <img src="../img/stolas.png" alt="Imagem Stolas" class="img" />
+  </div>
+
+  <h2>Se você realmente é a Yas, qual personagem de Undertale você seria?</h2>
+
+  <div class="container">
+    <input id="answerInput" type="text" placeholder="A Yas saberia essa..." autocomplete="off" />
+    <button id="submitBtn">Enviar</button>
+    <style>
+      #answerInput {
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      #submitBtn {
+        padding: 10px 15px;
+        font-size: 16px;
+        background-color: hsl(2, 44%, 24%);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      #submitBtn:hover {
+        background-color: hsl(2, 44%, 24%);
+      }
+    </style>
+  </div>
+
+  <div class="message" id="message"></div>
+
+  <script>
+    (function() {
+      const correctAnswer = "Mettaton";
+
+      function normalizeText(text) {
+        return text
+          .toLowerCase()
+          .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove acentos
+          .replace(/\s+/g, " ") // múltiplos espaços viram um só
+          .trim();
+      }
+
+      const redirectURL = "..//HTML Base/bemvinda.html";
+      const input = document.getElementById('answerInput');
+      const button = document.getElementById('submitBtn');
+      const message = document.getElementById('message');
+
+      button.addEventListener('click', function() {
+        const userAnswer = normalizeText(input.value);
+        if (!userAnswer) {
+          message.textContent = "Se não escrever não vai né...";
+          message.style.color = "white";
+          message.style.backgroundColor = "black";
+          setTimeout(() => {
+            message.textContent = "";
+          }, 2000);
+          return;
+        }
+
+        if (userAnswer === normalizeText(correctAnswer)) {
+          message.style.color = "white";
+          message.style.backgroundColor = "black";
+          message.textContent = "OIIIIE YAS";
+          setTimeout(() => {
+            window.location.href = redirectURL;
+          }, 1000);
+        } else {
+          message.textContent = "🤨";
+          message.style.color = "white";
+          message.style.backgroundColor = "black";
+          setTimeout(() => {
+            message.textContent = "";
+          }, 2000);
+        }
+      });
+
+      input.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          button.click();
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
